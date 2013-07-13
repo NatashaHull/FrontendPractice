@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Sample HTML page</title>
+    </head>
+    <body>
+        <div id="title">Hello. I am a title div. Yay!</div>
+        <h3>Check Amount</h3>
+        <div>$<input type="text" id="checkAmount"></div>
+        <h3>People</h3>
+        <div style="display:inline;">$<input type"text" id="peopleAmount"></div>
+        <button id="mybutton">Submit</butto
+        <div id="result" style="margin: 10 px; padding: 10 px;"></div>
+        <script type="text/javascript">
+            var checkAmount = document.getElementById("checkAmount")
+            var peopleAmount = document.getElementById("peopleAmount")
+            var result = document.getElementById("result")
+            var submitButton = document.getElementById("mybutton")
+            submitButton.addEventListener("click", function(){
+                var checkValue = checkAmount.value;
+                var peopleValue = peopleAmount.value;
+                if (checkValue > 0) {
+                    if (peopleValue > 0) {
+                        var price = checkValue/peopleValue;
+                        result.innerHTML = Math.round(price);
+                    } else {
+                        result.innerHTML = "These are not valid inputs. Try again!"
+                    };
+                } else {
+                    result.innerHTML = "These are not valid inputs. Try again!"
+                };
+            });
+        </script>
+    </body>
+</html>

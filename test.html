@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Sample HTML page</title>
+    </head>
+    <body>
+        <div id="title">Hello. I am a title div. Yay!</div>
+        <h3>Your Name Here</h3>
+        <input type="text" id="inputOne">
+        <button id="mybutton">Submit</button>
+        <script type="text/javascript">
+            var oldContent;
+            var mydiv = document.getElementById("title")
+            oldContent = mydiv.innerHTML;
+            mydiv.addEventListener("mouseover", function () {
+                mydiv.innerHTML = "boooo";
+                });
+            mydiv.addEventListener("mouseout", function () {
+                mydiv.innerHTML = oldContent;
+                });
+            var myButton = document.getElementById("mybutton");
+            var userSubmission = document.getElementById("inputOne");
+            myButton.addEventListener("click", function() {
+                alert(userSubmission.value);
+            });
+        </script>
+    </body>
+</html>
